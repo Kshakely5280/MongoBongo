@@ -8,3 +8,5 @@ const connectionString =
 connect(connectionString);
 
 module.exports = connection;
+
+// atlas password lhL3MfKY8qj8PbYL username:kyleshakely
