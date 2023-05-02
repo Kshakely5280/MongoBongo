@@ -1,0 +1,24 @@
+{
+  "name": "mongobongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kshakely5280/MongoBongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kshakely5280/MongoBongo/issues"
+  },
+  "homepage": "https://github.com/Kshakely5280/MongoBongo#readme"
+}
