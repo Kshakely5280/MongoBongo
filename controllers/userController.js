@@ -70,12 +70,45 @@ module.exports = {
             });
           }
     
-          res.json({ message: 'Student successfully deleted' });
+          res.json({ message: 'User successfully deleted' });
         } catch (err) {
           console.log(err);
           res.status(500).json(err);
         }
       },
-    // addFriend,
+    // addFriend
+    async addFriend(req, res) {
+      try {
+        const user = await User.findOneAndUpdate(
+          { _id: req.params.userId },
+          { $addToSet: { friends: req.params.friendId } },
+          { runValidators: true, new: true }
+        );
+        if (!user) {
+          return res.status(404).json({ message: "No User found with this ID!" });
+        }
+        res.json(user);
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    },
+
     // deleteFriend
+    async deleteFriend(req, res) {
+      try {
+        const user = await User.findOneAndUpdate(
+          { _id: req.params.userId },
+          { $pull: { friends: req.params.friendId } },
+          { new: true }
+        );
+        if (!user) {
+          return res.status(404).json({ message: "No User found with this ID!" });
+        }
+        res.json(user);
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    },
 }
