@@ -12,7 +12,7 @@ module.exports = {
         //     headCount: await headCount(),
         //   };
     
-        //   res.json(userObj);
+         res.json(user);
         } catch (err) {
           console.log(err);
           return res.status(500).json(err);
